@@ -43,3 +43,14 @@ Cardápio digital de uma panquecaria artesanal. Gerado originalmente pelo Bolt.n
 - Ao finalizar pedido, gerar mensagem WhatsApp no formato:
   "Olá, quero fazer este pedido:\n2x Frango 4 — R$ 50,00\nTotal: R$ 75,00"
 - Estruturar de forma modular para futuras integrações (pagamento, entrega, painel admin)
+
+## Frete
+- API: Google Distance Matrix
+- Chave da API: variável de ambiente VITE_GOOGLE_MAPS_KEY no arquivo .env
+- Endereço da loja: a definir (placeholder em src/data/delivery.ts)
+- Regra de cálculo:
+  - Até 1km: grátis
+  - Acima de 1km: R$ 5,00 fixo + R$ 0,50 a cada 0,5km acima de 1km
+  - Exemplo: 1,5km = R$ 5,50 | 2,5km = R$ 6,50
+- Input do cliente: CEP
+- O valor do frete deve entrar na mensagem final do WhatsApp

@@ -57,7 +57,7 @@ export function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                   </svg>
                 </div>
-                <span className="text-sm" style={{ color: '#A0856A' }}>Rua das Panquecas, 123 — Bairro Gourmet</span>
+                <span className="text-sm" style={{ color: '#A0856A' }}>Rua Castro Alves, 262 - Jardim Santo Antonio</span>
               </div>
               <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(192,57,43,0.15)' }}>

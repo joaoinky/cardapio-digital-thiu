@@ -14,12 +14,17 @@ interface CartContextType {
   clear: () => void;
   total: number;
   count: number;
+  freight: number | null;
+  deliveryUnavailable: boolean;
+  setFreightResult: (freight: number | null, unavailable: boolean) => void;
 }
 
 const CartContext = createContext<CartContextType | null>(null);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [freight, setFreight] = useState<number | null>(null);
+  const [deliveryUnavailable, setDeliveryUnavailable] = useState(false);
 
   const add = (item: MenuItem) => {
     setItems(prev => {
@@ -45,11 +50,19 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const clear = () => setItems([]);
 
+  const setFreightResult = (value: number | null, unavailable: boolean) => {
+    setFreight(value);
+    setDeliveryUnavailable(unavailable);
+  };
+
   const total = items.reduce((sum, ci) => sum + ci.item.price * ci.qty, 0);
   const count = items.reduce((sum, ci) => sum + ci.qty, 0);
 
   return (
-    <CartContext.Provider value={{ items, add, remove, updateQty, clear, total, count }}>
+    <CartContext.Provider value={{
+      items, add, remove, updateQty, clear, total, count,
+      freight, deliveryUnavailable, setFreightResult,
+    }}>
       {children}
     </CartContext.Provider>
   );
