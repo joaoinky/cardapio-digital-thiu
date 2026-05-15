@@ -44,9 +44,9 @@ function AppContent() {
     <div className="min-h-screen" style={{ background: '#0f0500' }}>
       <CartButton onClick={() => setCartOpen(true)} />
       <Hero />
-      <Differentials />
       <MenuSection />
       <DeliveryBanner />
+      <Differentials />
       <Reviews />
       <Footer />
       <WhatsAppFloat />

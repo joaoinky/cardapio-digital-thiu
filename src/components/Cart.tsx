@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { WHATSAPP_NUMBER } from '../data/menu';
 import { FreightCalculator } from './FreightCalculator';
@@ -19,6 +20,7 @@ function categoryGradient(category: string) {
 
 export function Cart({ open, onClose }: CartProps) {
   const { items, remove, updateQty, clear, total, count, freight, deliveryUnavailable, setFreightResult } = useCart();
+  const [address, setAddress] = useState('');
 
   const grandTotal = total + (freight ?? 0);
 
@@ -27,7 +29,7 @@ export function Cart({ open, onClose }: CartProps) {
       ci => `${ci.qty}x ${ci.item.name} — R$ ${fmt(ci.item.price * ci.qty)}`
     );
     const freightLine = freight === 0 ? 'Frete: Grátis' : `Frete: R$ ${fmt(freight!)}`;
-    const msg = `Olá, quero fazer este pedido:\n${lines.join('\n')}\nSubtotal: R$ ${fmt(total)}\n${freightLine}\nTotal: R$ ${fmt(grandTotal)}`;
+    const msg = `Olá, quero fazer este pedido:\n${lines.join('\n')}\nSubtotal: R$ ${fmt(total)}\n${freightLine}\nTotal: R$ ${fmt(grandTotal)}\nEndereço de entrega: ${address}`;
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
   };
 
@@ -213,6 +215,27 @@ export function Cart({ open, onClose }: CartProps) {
               </div>
             </div>
 
+            {/* Endereço de entrega */}
+            {freight !== null && !deliveryUnavailable && (
+              <div className="space-y-1">
+                <label className="text-xs font-semibold" style={{ color: '#A0856A' }}>
+                  Endereço de entrega
+                </label>
+                <input
+                  type="text"
+                  placeholder="Rua, número, bairro..."
+                  value={address}
+                  onChange={e => setAddress(e.target.value)}
+                  className="w-full rounded-lg px-3 py-2 text-sm outline-none"
+                  style={{
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(212,160,85,0.2)',
+                    color: '#F5DEB3',
+                  }}
+                />
+              </div>
+            )}
+
             {/* CTA */}
             {deliveryUnavailable ? (
               <div
@@ -227,6 +250,13 @@ export function Cart({ open, onClose }: CartProps) {
                 style={{ background: 'rgba(255,255,255,0.04)', color: '#6B5040', border: '1px solid rgba(212,160,85,0.1)' }}
               >
                 Calcule o frete para continuar
+              </div>
+            ) : address.trim() === '' ? (
+              <div
+                className="flex items-center justify-center w-full py-3 rounded-full text-sm font-semibold"
+                style={{ background: 'rgba(255,255,255,0.04)', color: '#6B5040', border: '1px solid rgba(212,160,85,0.1)' }}
+              >
+                Informe o endereço de entrega
               </div>
             ) : (
               <a

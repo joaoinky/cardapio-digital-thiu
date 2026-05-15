@@ -1,12 +1,12 @@
 import { OreganoBranch, PancakeSmall } from './Decorations';
 
 const reviews = [
-  { name: 'Mariana S.', text: 'Melhor panqueca que já comi! O recheio é generoso demais, dá pra sentir o amor em cada garfada. Já pedi mais de 10 vezes!', stars: 5, avatar: 'M' },
-  { name: 'João Pedro T.', text: 'A costela com cream cheese e bacon é simplesmente perfeita. Chega quentinha e bem embalada. Super recomendo!', stars: 5, avatar: 'J' },
-  { name: 'Fernanda L.', text: 'A Nutella com morango é uma das melhores sobremesas que já provei. A massa é fininha e o recheio transborda!', stars: 5, avatar: 'F' },
-  { name: 'Ricardo M.', text: 'Atendimento rápido e comida deliciosa. A panqueca de carne seca com cheddar é incrível. Virei cliente fiel!', stars: 5, avatar: 'R' },
-  { name: 'Ana Clara B.', text: 'Pedi a À Moda do Cliente com meus ingredientes favoritos e ficou sensacional. Vale muito cada centavo!', stars: 5, avatar: 'A' },
-  { name: 'Thiago O.', text: 'A entrega foi super rápida e a panqueca veio bem quentinha. O sabor da Rúcula com tomate seco é diferenciado!', stars: 5, avatar: 'T' },
+  { name: 'Mariana S.', text: 'Pedi a Costela 1 com cream cheese e bacon e me apaixonei! O recheio é generoso demais, dá pra sentir o capricho em cada garfada. Já pedi mais de 10 vezes!', stars: 5, avatar: 'M' },
+  { name: 'João Pedro T.', text: 'A Baiana com calabresa, ovo, parmesão e mussarela é simplesmente incrível. Chega quentinha e bem embalada. Super recomendo!', stars: 5, avatar: 'J' },
+  { name: 'Fernanda L.', text: 'A Nutella 1 com morango e leite condensado é uma das melhores sobremesas que já provei. A massa é fininha e o recheio transborda!', stars: 5, avatar: 'F' },
+  { name: 'Ricardo M.', text: 'A Carne Seca 3 com cheddar e milho é fantástica! Atendimento rápido, pedido chegou certinho. Já virei cliente fiel!', stars: 5, avatar: 'R' },
+  { name: 'Ana Clara B.', text: 'Pedi a À Moda do Cliente com frango, cheddar, milho e bacon — ficou sensacional. Adorei poder montar do meu jeito!', stars: 5, avatar: 'A' },
+  { name: 'Thiago O.', text: 'A Rúcula com tomate seco e queijo branco é diferenciada demais! A entrega foi rápida e a panqueca veio bem quentinha. Nota 10!', stars: 5, avatar: 'T' },
 ];
 
 export function Reviews() {
