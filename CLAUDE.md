@@ -49,8 +49,8 @@ Cardápio digital de uma panquecaria artesanal. Gerado originalmente pelo Bolt.n
 - Chave da API: variável de ambiente VITE_GOOGLE_MAPS_KEY no arquivo .env
 - Endereço da loja: a definir (placeholder em src/data/delivery.ts)
 - Regra de cálculo:
-  - Até 1km: grátis
+  - Até 1km: R$ 5,00 fixo
   - Acima de 1km: R$ 5,00 fixo + R$ 0,50 a cada 0,5km acima de 1km
-  - Exemplo: 1,5km = R$ 5,50 | 2,5km = R$ 6,50
+  - Exemplo: 0,5km = R$ 5,00 | 1,5km = R$ 5,50 | 2,5km = R$ 6,50
 - Input do cliente: CEP
 - O valor do frete deve entrar na mensagem final do WhatsApp

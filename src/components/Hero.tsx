@@ -51,10 +51,8 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-20 md:py-28">
         {/* Logo mark */}
-        <div className="mb-6 flex items-center gap-3">
-          <div className="w-16 h-16 rounded-full flex items-center justify-center border-2" style={{ background: 'linear-gradient(135deg, #C0392B, #8B0000)', borderColor: '#D4A055' }}>
-            <PancakeSmall className="w-10 h-8" />
-          </div>
+        <div className="mb-6">
+          <img src="/logo.png" alt="Panquecas do Thiu Tonho" className="w-36 h-36 md:w-44 md:h-44 object-contain drop-shadow-2xl" />
         </div>
 
         <p className="text-xs font-semibold tracking-[0.3em] uppercase mb-3" style={{ color: '#D4A055' }}>

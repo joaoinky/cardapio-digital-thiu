@@ -221,9 +221,9 @@ export function FreightCalculator({ onFreightChange, variant = 'dark' }: Freight
           </span>
           <span
             className="text-sm font-bold"
-            style={{ color: result.freight === 0 ? '#25D366' : (isLight ? '#F5DEB3' : '#D4A055') }}
+            style={{ color: isLight ? '#F5DEB3' : '#D4A055' }}
           >
-            {result.freight === 0 ? 'Frete grátis!' : `R$ ${result.freight.toFixed(2).replace('.', ',')}`}
+            {`R$ ${result.freight.toFixed(2).replace('.', ',')}`}
           </span>
         </div>
       )}
