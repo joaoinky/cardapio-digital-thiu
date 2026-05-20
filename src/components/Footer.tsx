@@ -77,9 +77,7 @@ export function Footer() {
             <h4 className="text-sm font-black tracking-widest uppercase mb-4" style={{ color: '#D4A055' }}>Horário de Funcionamento</h4>
             <div className="space-y-2">
               {[
-                { day: 'Segunda a Sexta', hours: '18h às 23h' },
-                { day: 'Sábado', hours: '12h às 23h' },
-                { day: 'Domingo', hours: '12h às 22h' },
+                { day: 'De Segunda a Segunda', hours: '18:30h às 23:30h' },
               ].map((h, i) => (
                 <div key={i} className="flex justify-between items-center">
                   <span className="text-sm" style={{ color: '#6B5040' }}>{h.day}</span>
